@@ -45,3 +45,29 @@ const simple = () => {
 (function hello(){
   console.log('IIFE')
 })();
+
+//Quiz time
+//function calculate(command,a,b)
+//command: add,substract,divide,mulitply,remainder
+
+function calculate(command,a,b){
+  switch(command){
+    case'add':{
+      return a+b;
+      break;
+    }case'sub':{
+      return a-b;
+      break;
+    }case'div':{
+      return a/b;
+      break;
+    }case'mul':{
+      return a*b;
+      break;
+    }case'remainder':{
+      return a%b;
+      break;
+    }
+  }
+}
+console.log(calculate('add',4,2));

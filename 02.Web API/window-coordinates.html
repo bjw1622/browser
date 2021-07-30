@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates</title>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: bisque;
+        border: 1px solid black;
+      }
+      #special {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="special"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+      /*
+      const ele = document.querySelector("#special");
+
+      ele.addEventListener("click", (e) => {
+        const imgRect = ele.getBoundingClientRect();
+        console.log(imgRect);
+        console.log(`clientX, Y: (${e.clientX}, ${e.clientY})`);
+        console.log(`pageX, Y: (${e.pageX}, ${e.pageY})`);
+      });
+      */
+      const $special = document.querySelector("#special");
+
+      $special.addEventListener("click", (event) => {
+        const rect = $special.getBoundingClientRect();
+        console.log(rect);
+        console.log(`${event.clientX},${event.clientY}`);
+        console.log(`${event.pageX},${event.pageY}`);
+      });
+    </script>
+  </body>
+</html>

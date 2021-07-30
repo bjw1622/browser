@@ -15,10 +15,31 @@
       #special {
         background-color: blue;
       }
+      .a {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        display: inline-block;
+        height: 25px;
+      }
+      footer {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
     </style>
   </head>
   <body>
-    <div></div>
+    <nav class="a">
+      <div></div>
+      <footer>
+        <button id="move">Scroll by 100px(y)</button>
+        <button id="move__to">Scroll to 100px(y)</button>
+        <button id="move__special">Scroll into special</button>
+      </footer>
+    </nav>
     <div></div>
     <div></div>
     <div></div>
@@ -28,23 +49,27 @@
     <div></div>
 
     <script>
-      /*
-      const ele = document.querySelector("#special");
-
-      ele.addEventListener("click", (e) => {
-        const imgRect = ele.getBoundingClientRect();
-        console.log(imgRect);
-        console.log(`clientX, Y: (${e.clientX}, ${e.clientY})`);
-        console.log(`pageX, Y: (${e.pageX}, ${e.pageY})`);
-      });
-      */
       const $special = document.querySelector("#special");
-
       $special.addEventListener("click", (event) => {
         const rect = $special.getBoundingClientRect();
         console.log(rect);
         console.log(`${event.clientX},${event.clientY}`);
         console.log(`${event.pageX},${event.pageY}`);
+      });
+
+      const $move = document.querySelector("#move");
+      $move.addEventListener("click", () => {
+        window.scrollBy(0, 100);
+      });
+
+      const $move__to = document.querySelector("#move__to");
+      $move__to.addEventListener("click", () => {
+        window.scrollTo(0, 100);
+      });
+
+      const $move__special = document.querySelector("#move__special");
+      $move__special.addEventListener("click", () => {
+        $special.scrollIntoView();
       });
     </script>
   </body>

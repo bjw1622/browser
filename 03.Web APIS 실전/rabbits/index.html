@@ -7,31 +7,29 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main">
-      <button class="find">Find a rabbit!</button>
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img id="rabbit" src="img/rabbit.png" alt="rabbit" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-      <img src="img/carrot.png" alt="carrot" />
-    </div>
+    <button class="find">Find a rabbit!</button>
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img id="rabbit" src="img/rabbit.png" alt="rabbit" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
 
     <script>
       const find = document.querySelector(".find");
       const rabbit = document.querySelector("#rabbit");
 
       find.addEventListener("click", () => {
-        rabbit.scrollIntoView();
+        rabbit.scrollIntoView({ behavior: "smooth", block: "center" });
       });
     </script>
   </body>

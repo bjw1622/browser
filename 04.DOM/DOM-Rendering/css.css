@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+  margin: 0px;
+}
+.line {
+  position: absolute;
+  background-color: white;
+}
+
+.vertical {
+  height: 100%;
+  width: 2px;
+}
+
+.horizantal {
+  height: 2px;
+  width: 100%;
+}
+.target {
+  position: absolute;
+}
+.tag {
+  color: white;
+  position: absolute;
+  font-size: 25px;
+  margin: 20px;
+}

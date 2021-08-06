@@ -1,31 +1,50 @@
-const input = document.querySelector('.input');
-const content__index = document.querySelector('.content__index');
-const add = document.querySelector('#add');
-const shop = document.querySelector('.shop');
+const items = document.querySelector('.items');
+const input = document.querySelector('.footer__input');
+const addBtn = document.querySelector('.footer__button');
 
-
-input.addEventListener('keydown',updateValue);
-function updateValue(e){
-  if(e.keyCode === 13){
-    content__index.innerHTML +=`${e.target.value}  <button class="delete">X</button><br>`;
-    input.value ='';
-  }
+function onAdd(){
+      // 1. 사용자가 입력한 텍스트 받아오기
+      const text = input.value;
+      console.log(text);
+      // 2. 새로운 아이템을 만듬 
+      const item = createItem(text);
+      // 3. 아이템 컨테이너 안에 추가
+      items.appendChild(item);
+      // 4. 인풋 초기화
+      input.value = '';
+      input.focus();
 }
 
-add.addEventListener('click',() =>{
-  content__index.innerHTML +=`${input.value}  <button class="de">X</button><br>`;
-  input.value ='';
-})
+function createItem(text){
+  const itemRow = document.createElement('li');
+  itemRow.setAttribute('class','item__row');
 
-//초기화
-shop.addEventListener('click',()=>{
-  content__index.textContent = '';
-  input.value = '';
-})
+  const item = document.createElement('div');
+  item.setAttribute('class','item');
 
-const de = document.querySelector('.de');
-de.addEventListener('click', ()=>{
-  content__index.textContent = '';
-  input.value = '';
-  console.log('das');
+  const itemName = document.createElement('span');
+  itemName.setAttribute('class','item__name');
+  itemName.innerText = text;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.setAttribute('class','item__delete');
+  deleteBtn.innerHTML ='<i class="fas fa-trash-alt"></i>';
+  deleteBtn.addEventListener('click',()=>{
+    items.removeChild(itemRow);
+  })
+
+  const divider = document.createElement('div');
+  divider.setAttribute('class','item__divider');
+
+  item.appendChild(itemName);
+  item.appendChild(deleteBtn);
+
+  itemRow.appendChild(item);
+  itemRow.appendChild(divider);
+
+  return itemRow;
+}
+
+addBtn.addEventListener('click',()=>{
+  onAdd();
 })

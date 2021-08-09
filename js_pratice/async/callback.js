@@ -56,4 +56,4 @@ const UserStorage = new UserStorage();
 const id = prompt(`enter your id`);
 const password = prompt(`enter your pw`);
 
-UserStorage.loginUser(id,password,(user)=>{},(error)=>{})
+UserStorage.loginUser(id,password,(user)=>{},(error)=>{});

@@ -1,8 +1,12 @@
-//Objects
-//object = {key:value}의 집합체
+// Objects
+// one of the JavaScript's data types.
+// a collection of related data and/or functionality.
+// Nearly all objects in JavaScript are instances of Object
+// object = {key:value}의 집합체 { 변수:값 }
+
 //1.Literals and properties
 const obj1 = {}; //'object literal' syntax
-const obj2 = new Object(); //`object constructor` syntax
+const obj2 = new Object(); //`object constructor` syntax 클래스를 템플릿으로 object만들기
 
 function print(person){
   console.log(person.name);
@@ -12,21 +16,22 @@ function print(person){
 const jay = {name:'jay' , age:25};
 print(jay);
 
-jay.job = true;
+jay.job = true; //object를 추가했더라도 추가가 가능
 console.log(jay);
 
-delete jay.job;
+delete jay.job; //삭제도 가능
 console.log(jay);
 
 //2. Computed properties
 //key should be a always string
 console.log(jay.name);
-console.log(jay['name']);
+console.log(jay['name']);//key는 string형태로 접근
+
 jay['job'] = true;
 console.log(jay.job);
 
 function printValue(obj,key){
-  console.log(obj[key]);
+  console.log(obj[key]); //키에 관련된 값들을 받을 때
 }
 printValue(jay,'name');
 printValue(jay,'age');

@@ -64,7 +64,7 @@ Article.print();
 
 
 //5.Inheritance 상속 & 다양성
-//a way for one clas to extend another class.
+//a way for one class to extend another class.
 class Shape{
   constructor(width,height,color){
     this.width = width;
@@ -103,4 +103,4 @@ console.log(triangle instanceof Triangle);//t
 console.log(triangle instanceof Shape);//t
 console.log(triangle instanceof Object);//t
 //js에서 만든 모든 object들은 Object클래스를 상속 받은 것
-console.log(triangle.toString())
+console.log(triangle.toString());

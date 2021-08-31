@@ -37,8 +37,29 @@ class User{
 
 const user = new User("a","b",12);
 user.setAge = 12
-console.log(user.returnAge)//12  
+console.log(user.returnAge)//12
 
+//3.Fields (public,private)
+//private 선언 시에는 클래스 내부에서만
+class Experiment{
+  publicField = 2;
+  #privateField = 0;
+}
+
+//4.Static propeties and methods/
+//static은 object에 상관없이 클래스 자체에 연결
+class Article{
+  static public = 'Hi';
+  constructor(number){
+    this.number = number;
+  }
+  static print(){
+    console.log(Article.public)
+  }
+}
+
+console.log(Article.public);
+Article.print();
 //5.Inheritance
 class Shape{
   constructor(width,height,color){

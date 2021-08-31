@@ -10,8 +10,7 @@ class Person{
     this.name = name;
     this.age = age;
   }
-
-  //methods
+   //methods
   speak(){
     console.log(`${this.name}:hello!`)
   }
@@ -20,24 +19,25 @@ class Person{
 const jay = new Person('jay',22);
 console.log(jay.name);
 jay.speak();
-
+ 
 //2.Getter and Setter
 class User{
   constructor(firstName,lastName,age){
     this.firstName = firstName;
     this.lastName = lastName;
-    this.age = age;
+    this.age = age
   }
-  get age(){
+  get returnAge(){
     return this._age;
   }
-  set age(value){
-    this._age = value < 0 ? 0: value;
+  set setAge(value){
+    this._age = value < 0 ? 0 : value;
   }
 }
-const user = new User('jay','job',-1);
-console.log(user.age);
-console.log(user._age) 
+
+const user = new User("a","b",12);
+user.setAge = 12
+console.log(user.returnAge)//12  
 
 //5.Inheritance
 class Shape{

@@ -48,6 +48,7 @@ class Experiment{
 
 //4.Static propeties and methods/
 //static은 object에 상관없이 클래스 자체에 연결
+//memory의 사용을 줄일 수 있다.
 class Article{
   static public = 'Hi';
   constructor(number){
@@ -60,7 +61,10 @@ class Article{
 
 console.log(Article.public);
 Article.print();
-//5.Inheritance
+
+
+//5.Inheritance 상속 & 다양성
+//a way for one clas to extend another class.
 class Shape{
   constructor(width,height,color){
     this.width = width;
@@ -76,19 +80,27 @@ class Shape{
 }
 
 class Rectangle extends Shape{}
+
+const rectangle = new Rectangle(20,20,'blue')
+rectangle.draw(); //drawing blue color!
+
 class Triangle extends Shape{
   //overriding
   getArea(){
-    console.log(super.getArea());
-    return (this.width * this.height /2)
+    return this.width * this.width / 2 //const area = super.getArea() => return area/2
+  }
+  toString(){
+    return `${this.color}입니다.`
   }
 }
-const rectangle = new Rectangle(20,20,'blue');
-rectangle.draw();
-console.log(rectangle.getArea());
-const triangle = new Triangle(20,20,'blue');
-console.log(triangle.getArea());
+const triangle = new Triangle(20,20,'red')
+console.log(triangle.getArea())
 
 //6.Class checking: instanceOf
-console.log(rectangle instanceof Rectangle);
-console.log(rectangle instanceof Object);
+console.log(rectangle instanceof Rectangle);//t
+console.log(triangle instanceof Rectangle);//f
+console.log(triangle instanceof Triangle);//t
+console.log(triangle instanceof Shape);//t
+console.log(triangle instanceof Object);//t
+//js에서 만든 모든 object들은 Object클래스를 상속 받은 것
+console.log(triangle.toString())

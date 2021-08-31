@@ -44,26 +44,29 @@ const person4 = new Person('jay',25);
 console.log(person4);
 
 //4.Constuctor function
+//클래스 같은 function
 function Person(name,age){
-  //this = {};
+  //this = {}; 생략
   this.name = name;
   this.age = age;
-  //return this
+  //return this 생략
 }
 
 //5.in operator: property existence check(key in obj);
+//키가 존재하는지 확인 가능한 키워드
 console.log('name' in jay); //true
 console.log('age' in jay); // true
 console.log('dasd' in jay);//false
 
-console.clear();
 //6. for..in vs for..of
 //for (key in obj)
-  for(a in jay){
+//object안에 모든 키들 출력
+for(a in jay){
     console.log(a);
 }
 
 //for(value of iterable)
+//for of는 array의 모든 값들이 value에 할당
 const array = [1,2,3,4,5];
 for(value of array){
   console.log(value);
@@ -75,19 +78,22 @@ const user = {name:'jay',age:'20'};
 const user2 = user;
 console.log(user);
 
+//Object를 복사하는 방법     
 //old way
 const user3 = {};
 for(key in user){
-  user3[key] = user[key];
+  user3[key] = user[key]; //key 순서 => name , age
 }
 console.log(user3);
 
 const user4 = {};
-Object.assign(user4,user);
+Object.assign(user4,user);//Object는 js에 기본으로 존재하는 것, assign메소드
+//assing은 복사하고자하는 타겟전달
 console.log(user4);
 console.log(user);
 
 //another example
+//2개 이상 조합
 const fruit1 = {color:'red',weight:54};
 const fruit2 = {color:'blue',size:'big'};
 const mixed = Object.assign({},fruit1,fruit2);//뒤에서 계속 덮어씌우기

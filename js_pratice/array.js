@@ -20,7 +20,7 @@ for (let i = 0; i < fruits.length; i++) {
 for (let fruit of fruits) {
   console.log(fruit);
 }
-c.forEach;
+//c.forEach;
 fruits.forEach((index, fruits) => console.log(index, fruits)); //파라미터로 value,index,array
 
 //4.Additon,deletion,copy
@@ -53,4 +53,4 @@ console.log(fruits.includes(2231));
 //lastIndexOf
 fruits.push(11);
 console.log(fruits);
-console.log(fruits.lastIndexOf(11)); //제일 마지막에 있는 값 출력
+console.log(fruits.lastIndexOf(11)); //제일 마지막에 있는 index 출력

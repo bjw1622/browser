@@ -1,31 +1,33 @@
 // Q1. make a string out of an array
+// join()
 {
-  const fruits = ['apple', 'banana', 'orange'];
-  console.log(fruits.join());
+  const fruits = ["apple", "banana", "orange"];
+  // fruits.forEach((index, value) => {
+  //   process.stdout.write(`${index} `);
+  // });
+  // const result = fruits.join(" ");
+  // console.log(result);
 }
 
-
 // Q2. make an array out of a string
+// split()
 {
-  const fruits = '🍎, 🥝, 🍌, 🍒';
-  const result = fruits.split(",");
-  console.log(result);
+  // const fruits = "🍎, 🥝, 🍌, 🍒";
+  // const arr = fruits.split(",");
+  // console.log(arr);
 }
 
 // Q3. make this array look like this: [5, 4, 3, 2, 1]
+// reverse()
 {
-  const array = [1, 2, 3, 4, 5];
-  const re = array.splice().reverse();
-  console.log(re);
-  console.log(array);
+  // const array = [1, 2, 3, 4, 5];
+  // const result = array.reverse();
+  // console.log(result);
 }
 
 // Q4. make new array without the first two elements
 {
   const array = [1, 2, 3, 4, 5];
-  const neww= array.slice(2);
-  console.log(neww);
-  console.log(array);
 }
 
 class Student {
@@ -37,16 +39,16 @@ class Student {
   }
 }
 const students = [
-  new Student('A', 29, true, 45),
-  new Student('B', 28, false, 80),
-  new Student('C', 30, true, 90),
-  new Student('D', 40, false, 66),
-  new Student('E', 18, true, 88),
+  new Student("A", 29, true, 45),
+  new Student("B", 28, false, 80),
+  new Student("C", 30, true, 90),
+  new Student("D", 40, false, 66),
+  new Student("E", 18, true, 88),
 ];
 
 // Q5. find a student with the score 90
 {
-  const result = students.find(function (student,index){
+  const result = students.find(function (student, index) {
     return student.score === 90;
   });
 }

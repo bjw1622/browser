@@ -105,19 +105,33 @@ const students = [
 // }
 
 // Q9. compute students' average score
-//reduce
+//reduce() 누적 return 하는 값이 처음으로 전달
 {
-  const result = students.reduce((student) => {
-    console.log(student.score);
-  });
+  // const result = students.reduce((prev, curr) => {
+  //   console.log(`--------`);
+  //   console.log(prev);
+  //   console.log(curr);
+  //   return prev.score + curr.score;
+  // });
+  // console.log(`평균:${result / students.length}`);
 }
 
 // Q10. make a string containing all the scores
 // result should be: '45, 80, 90, 66, 88'
+// api들을 묶어서 계속 사용 -> 함수형 프로그래밍 가독성도 좋아짐
 {
+  // const result = students
+  //   .map((student) => {
+  //     return student.score;
+  //   })
+  //   .filter((score) => score >= 50)
+  //   .join(",");
+  // console.log(result);
 }
 
 // Bonus! do Q10 sorted in ascending order
 // result should be: '45, 66, 80, 88, 90'
 {
+  const result = students.map((student) => student.score).sort();
+  console.log(result);
 }
